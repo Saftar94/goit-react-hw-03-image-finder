@@ -20,8 +20,7 @@ class ImageGallery extends Component {
       prevProps.imageName !== this.props.imageName ||
       prevSet.page !== this.state.page
     ) {
-      if (prevProps.imageName !== this.props.imageName)
-        this.setState({ image: [], status: 'pending' })
+      this.setState({ image: [], status: 'pending' })
       FetchApi(this.props.imageName, this.state.page)
         .then((image) => {
           if (image.hits.length === 0) {
